@@ -1,9 +1,10 @@
 import { useState } from "react"
 import { Link, useLocation } from "react-router-dom"
-import { Menu, X, Zap } from "lucide-react"
+import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { motion, AnimatePresence } from "framer-motion"
+import airplaneLogo from "@/assets/airplane-logo.png"
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -20,9 +21,13 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur-sm">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
         {/* Logo */}
-        <Link to="/" className="flex items-center space-x-2 group">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-primary group-hover:shadow-glow transition-all duration-300">
-            <Zap className="h-5 w-5 text-white" />
+        <Link to="/" className="flex items-center space-x-3 group">
+          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-primary p-1 group-hover:shadow-glow transition-all duration-300">
+            <img 
+              src={airplaneLogo} 
+              alt="AirML Logo" 
+              className="h-full w-full object-contain filter brightness-0 invert"
+            />
           </div>
           <span className="text-xl font-bold gradient-text">AirML</span>
         </Link>

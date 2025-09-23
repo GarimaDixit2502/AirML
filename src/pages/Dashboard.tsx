@@ -30,6 +30,11 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+import TimeSeriesChart from "@/components/charts/TimeSeriesChart"
+import RULComparisonChart from "@/components/charts/RULComparisonChart"
+import FeatureImportanceChart from "@/components/charts/FeatureImportanceChart"
+import RULDistributionChart from "@/components/charts/RULDistributionChart"
+import ThresholdGauge from "@/components/charts/ThresholdGauge"
 
 // Mock data for predictions history
 const mockPredictions = [
@@ -205,11 +210,45 @@ export default function Dashboard() {
           </Card>
         </motion.div>
 
-        {/* Main Table */}
+        {/* Charts Grid - Analytics Dashboard */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8"
+        >
+          <TimeSeriesChart />
+          <RULComparisonChart />
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8"
+        >
+          <FeatureImportanceChart />
+          <RULDistributionChart />
+        </motion.div>
+
+        {/* Threshold Alerts Grid */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8"
+        >
+          <ThresholdGauge value={28} threshold={100} title="Critical Engine" engineId="N777XY-003" />
+          <ThresholdGauge value={62} threshold={100} title="Medium Risk" engineId="N320AB-002" />
+          <ThresholdGauge value={145} threshold={200} title="Healthy Engine" engineId="N747BA-001" />
+          <ThresholdGauge value={189} threshold={200} title="Optimal" engineId="N380QR-004" />
+        </motion.div>
+
+        {/* Main Table */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
         >
           <Card className="glass-card">
             <CardHeader>

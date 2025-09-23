@@ -14,7 +14,7 @@ import {
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import heroImage from "@/assets/hero-engine.jpg"
+import heroImage from "@/assets/airplane-3d-hero.jpg"
 
 const features = [
   {
@@ -111,10 +111,10 @@ export default function Landing() {
               <div className="relative overflow-hidden rounded-2xl shadow-2xl">
                 <img
                   src={heroImage}
-                  alt="AI-powered aircraft engine monitoring"
+                  alt="AI-powered aircraft engine monitoring with 3D airplane model"
                   className="w-full h-auto object-cover float-animation"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent" />
               </div>
             </motion.div>
           </div>
