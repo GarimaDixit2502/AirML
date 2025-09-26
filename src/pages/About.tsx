@@ -75,7 +75,7 @@ const team = [
 
 export default function About() {
   return (
-    <div className="min-h-screen bg-gradient-subtle py-12">
+    <div className="min-h-screen bg-blue-300 py-12 dark:bg-sky-950">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Hero Section */}
         <motion.div
@@ -89,9 +89,9 @@ export default function About() {
           </Badge>
           <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
             Revolutionizing Aircraft 
-            <span className="gradient-text block">Maintenance with AI</span>
+            <span className=" block dark:text-white">Maintenance with AI</span>
           </h1>
-          <p className="mt-6 text-xl leading-8 text-muted-foreground max-w-4xl mx-auto">
+          <p className="mt-6 text-xl leading-8 font-semibold  dark:text-white max-w-4xl mx-auto">
             AirML leverages cutting-edge machine learning to predict aircraft engine remaining useful life, 
             transforming maintenance strategies from reactive to predictive, saving costs and enhancing safety.
           </p>
@@ -105,11 +105,11 @@ export default function About() {
           transition={{ duration: 0.8 }}
           className="mb-20"
         >
-          <Card className="glass-card bg-gradient-primary/5 border-primary/10">
+          <Card className="glass-card bg-white dark:bg-sky-900 border-primary/10">
             <CardContent className="p-12 text-center">
-              <Lightbulb className="mx-auto h-12 w-12 text-primary mb-6" />
+              <Lightbulb className="mx-auto dark:bg-white rounded-2xl h-12 w-12 text-primary mb-6" />
               <h2 className="text-3xl font-bold text-foreground mb-6">Our Mission</h2>
-              <p className="text-lg text-muted-foreground max-w-4xl mx-auto">
+              <p className="text-lg dark:text-white font-semibold max-w-4xl mx-auto">
                 To democratize predictive maintenance in aviation by making advanced AI accessible to airlines, 
                 maintenance providers, and aerospace engineers worldwide. We're building the future where aircraft 
                 downtime is minimized, safety is maximized, and maintenance costs are optimized through intelligent predictions.
@@ -130,7 +130,7 @@ export default function About() {
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
               Advanced Machine Learning Models
             </h2>
-            <p className="mt-6 text-lg leading-8 text-muted-foreground">
+            <p className="mt-6 text-lg leading-8 dark:text-white font-semibold">
               Our ensemble approach combines multiple ML algorithms for superior prediction accuracy
             </p>
           </div>
@@ -144,7 +144,7 @@ export default function About() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <Card className="glass-card h-full hover:shadow-card transition-all duration-300">
+                <Card className="glass-card bg-white dark:bg-sky-900 h-full hover:shadow-card transition-all duration-300">
                   <CardHeader className="text-center">
                     <div className="w-16 h-16 mx-auto mb-4 rounded-xl bg-gradient-primary flex items-center justify-center">
                       <Brain className="h-8 w-8 text-white" />
@@ -155,7 +155,7 @@ export default function About() {
                     </Badge>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-muted-foreground text-center">{tech.description}</p>
+                    <p className="dark:text-white font-semibold text-center">{tech.description}</p>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -175,7 +175,7 @@ export default function About() {
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
               Key Features & Capabilities
             </h2>
-            <p className="mt-6 text-lg leading-8 text-muted-foreground">
+            <p className="mt-6 text-lg leading-8 dark:text-white font-semibold">
               Built on solid foundations with enterprise-grade features
             </p>
           </div>
@@ -189,7 +189,7 @@ export default function About() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <Card className="glass-card h-full">
+                <Card className="glass-card h-full bg-white dark:bg-sky-900">
                   <CardHeader>
                     <div className="flex items-center gap-4">
                       <div className="h-12 w-12 rounded-lg bg-gradient-primary flex items-center justify-center">
@@ -199,7 +199,7 @@ export default function About() {
                     </div>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-muted-foreground">{feature.description}</p>
+                    <p className="dark:text-white font-semibold">{feature.description}</p>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -215,32 +215,32 @@ export default function About() {
           transition={{ duration: 0.8 }}
           className="mb-20"
         >
-          <Card className="glass-card">
+          <Card className="glass-card bg-white dark:bg-sky-900">
             <CardHeader className="text-center">
-              <Database className="mx-auto h-12 w-12 text-primary mb-4" />
+              <Database className="mx-auto h-12 w-12 text-primary mb-4 dark:bg-white rounded-2xl" />
               <CardTitle className="text-2xl">NASA Turbofan Engine Dataset</CardTitle>
-              <CardDescription className="text-lg">
+              <CardDescription className="text-lg text-white font-semibold">
                 Our models are trained on NASA's comprehensive engine degradation simulation
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-8">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
                 <div>
-                  <div className="text-3xl font-bold text-primary mb-2">100+</div>
-                  <div className="text-muted-foreground">Engine Units</div>
+                  <div className="text-3xl font-bold text-current mb-2">100+</div>
+                  <div className="dark:text-white font-semibold">Engine Units</div>
                 </div>
                 <div>
-                  <div className="text-3xl font-bold text-primary mb-2">21</div>
-                  <div className="text-muted-foreground">Sensor Measurements</div>
+                  <div className="text-3xl font-bold text-current mb-2">21</div>
+                  <div className="dark:text-white font-semibold">Sensor Measurements</div>
                 </div>
                 <div>
-                  <div className="text-3xl font-bold text-primary mb-2">3</div>
-                  <div className="text-muted-foreground">Operating Conditions</div>
+                  <div className="text-3xl font-bold text-current mb-2">3</div>
+                  <div className="dark:text-white font-semibold">Operating Conditions</div>
                 </div>
               </div>
               
               <div className="prose prose-sm max-w-none text-muted-foreground">
-                <p className="text-center">
+                <p className="text-center text-black font-semibold dark:text-white">
                   The dataset includes sensor measurements such as temperature, pressure, fan speed, and core speed 
                   under various operating conditions and fault modes. Each engine starts from normal operation and 
                   develops a fault over time until system failure.
@@ -262,7 +262,7 @@ export default function About() {
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
               Expert Team
             </h2>
-            <p className="mt-6 text-lg leading-8 text-muted-foreground">
+            <p className="mt-6 text-lg leading-8 dark:text-white font-semibold">
               Built by aerospace and AI experts passionate about innovation
             </p>
           </div>
@@ -276,14 +276,14 @@ export default function About() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <Card className="glass-card text-center">
+                <Card className="glass-card text-center bg-white dark:bg-sky-900">
                   <CardContent className="p-8">
                     <div className="h-16 w-16 mx-auto mb-6 rounded-full bg-gradient-primary flex items-center justify-center">
                       <Users className="h-8 w-8 text-white" />
                     </div>
                     <h3 className="text-xl font-semibold text-foreground mb-2">{member.name}</h3>
                     <Badge variant="outline" className="mb-4">{member.role}</Badge>
-                    <p className="text-muted-foreground">{member.description}</p>
+                    <p className="text-black dark:text-white font-semibold">{member.description}</p>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -299,9 +299,9 @@ export default function About() {
           transition={{ duration: 0.8 }}
           className="text-center"
         >
-          <Card className="glass-card bg-gradient-primary/5 border-primary/10">
+          <Card className="glass-card bg-white dark:bg-sky-900 border-primary/10">
             <CardContent className="p-12">
-              <GitBranch className="mx-auto h-12 w-12 text-primary mb-6" />
+              <GitBranch className="mx-auto h-12 w-12 dark: bg-white rounded-2xl text-primary mb-6" />
               <h2 className="text-3xl font-bold text-foreground mb-6">Open Source & Research</h2>
               <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
                 AirML is committed to advancing the field of predictive maintenance. Our research and methodologies 

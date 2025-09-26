@@ -13,10 +13,10 @@ const distributionData = [
 
 export default function RULDistributionChart() {
   return (
-    <Card className="glass-card">
+    <Card className="glass-card dark:bg-sky-900">
       <CardHeader>
         <CardTitle>RUL Distribution</CardTitle>
-        <CardDescription>
+        <CardDescription className="text-white">
           Distribution of predicted remaining useful life across all engines
         </CardDescription>
       </CardHeader>
@@ -27,9 +27,10 @@ export default function RULDistributionChart() {
               <CartesianGrid strokeDasharray="3 3" className="opacity-30" />
               <XAxis 
                 dataKey="range" 
-                label={{ value: 'RUL Range (cycles)', position: 'insideBottom', offset: -5 }}
+                tick={{ fill: 'currentColor' }} 
+                label={{ value: 'RUL Range (cycles)', position: 'insideBottom', offset: -5 ,fill: 'currentColor'}}
               />
-              <YAxis label={{ value: 'Number of Engines', angle: -90, position: 'insideLeft' }} />
+              <YAxis  tick={{ fill: 'currentColor' }}  label={{ value: 'Number of Engines', angle: -90, position: 'insideLeft',fill: 'currentColor' }} />
               <Tooltip 
                 contentStyle={{ 
                   backgroundColor: 'hsl(var(--card))', 

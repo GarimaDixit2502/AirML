@@ -13,10 +13,10 @@ const rulData = [
 
 export default function RULComparisonChart() {
   return (
-    <Card className="glass-card">
+    <Card className="glass-card dark:bg-sky-900">
       <CardHeader>
         <CardTitle>Predicted vs Actual RUL</CardTitle>
-        <CardDescription>
+        <CardDescription className="text-white">
           Comparison of AI predictions with ground truth data
         </CardDescription>
       </CardHeader>
@@ -26,10 +26,11 @@ export default function RULComparisonChart() {
             <BarChart data={rulData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
               <CartesianGrid strokeDasharray="3 3" className="opacity-30" />
               <XAxis 
+              tick={{ fill: 'currentColor' }} 
                 dataKey="engine" 
-                label={{ value: 'Engine ID', position: 'insideBottom', offset: -5 }}
+                label={{ value: 'Engine ID', position: 'insideBottom', offset: -5 ,fill: 'currentColor'}}
               />
-              <YAxis label={{ value: 'RUL (cycles)', angle: -90, position: 'insideLeft' }} />
+              <YAxis  tick={{ fill: 'currentColor' }}  label={{ value: 'RUL (cycles)', angle: -90, position: 'insideLeft' ,fill: 'currentColor'}} />
               <Tooltip 
                 contentStyle={{ 
                   backgroundColor: 'hsl(var(--card))', 

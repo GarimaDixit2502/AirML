@@ -13,10 +13,10 @@ const featureData = [
 
 export default function FeatureImportanceChart() {
   return (
-    <Card className="glass-card">
+    <Card className="glass-card dark:bg-sky-900">
       <CardHeader>
         <CardTitle>Feature Importance</CardTitle>
-        <CardDescription>
+        <CardDescription className="text-white">
           Which sensors contribute most to RUL predictions
         </CardDescription>
       </CardHeader>
@@ -31,13 +31,15 @@ export default function FeatureImportanceChart() {
               <CartesianGrid strokeDasharray="3 3" className="opacity-30" />
               <XAxis 
                 type="number" 
+                tick={{ fill: 'currentColor' }} 
                 domain={[0, 50]}
-                label={{ value: 'Importance (%)', position: 'insideBottom', offset: -5 }}
+                label={{ value: 'Importance (%)', position: 'insideBottom', offset: -5 ,fill: 'currentColor'}}
               />
               <YAxis 
                 type="category" 
                 dataKey="feature" 
                 width={70}
+                tick={{ fill: 'currentColor' }} 
               />
               <Tooltip 
                 contentStyle={{ 

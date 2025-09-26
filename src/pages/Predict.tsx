@@ -89,7 +89,7 @@ export default function Predict() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-subtle py-12">
+    <div className="min-h-screen bg-blue-300 dark:bg-sky-950 py-12">
       <div className="mx-auto max-w-6xl px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -98,9 +98,9 @@ export default function Predict() {
           className="text-center mb-12"
         >
           <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
-            Engine Health <span className="gradient-text">Prediction</span>
+            Engine Health Prediction
           </h1>
-          <p className="mt-6 text-lg leading-8 text-muted-foreground max-w-3xl mx-auto">
+          <p className="mt-6 text-2xl leading-8 text-muted-foreground max-w-3xl mx-auto">
             Input your engine sensor data and operational parameters to get AI-powered predictions of remaining useful life
           </p>
         </motion.div>
@@ -113,7 +113,7 @@ export default function Predict() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="lg:col-span-2"
           >
-            <Card className="glass-card">
+            <Card className="glass-card dark:bg-sky-900 w-[700px] h-[900px] gap-6">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Activity className="h-5 w-5 text-primary" />
@@ -179,16 +179,17 @@ export default function Predict() {
                   </TabsContent>
                 </Tabs>
                 
-                <div className="mt-8 flex justify-center">
+                <div className="mt-8 flex justify-center ">
                   <Button
                     onClick={handlePredict}
                     disabled={isLoading}
                     size="lg"
-                    className="btn-hero min-w-48"
+                    className=" min-w-48 light:btn-hero  dark:bg-white dark:text-blue-900"
+                    
                   >
                     {isLoading ? (
                       <>
-                        <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2" />
+                        <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2 " />
                         Predicting...
                       </>
                     ) : (
@@ -213,9 +214,9 @@ export default function Predict() {
             {prediction ? (
               <>
                 {/* Main Prediction Card */}
-                <Card className={`glass-card ${getRiskBg(prediction.riskLevel)}`}>
-                  <CardHeader>
-                    <CardTitle className="flex items-center gap-2">
+                <Card className={`  ${getRiskBg(prediction.riskLevel)}`}>
+                  <CardHeader >
+                    <CardTitle className="flex items-center gap-2 ">
                       <Gauge className="h-5 w-5 text-primary" />
                       Prediction Results
                     </CardTitle>
@@ -225,14 +226,14 @@ export default function Predict() {
                       <div className="text-4xl font-bold text-foreground mb-2">
                         {prediction.rul} cycles
                       </div>
-                      <div className="text-lg text-muted-foreground">
+                      <div className="text-lg text-white">
                         Remaining Useful Life
                       </div>
                     </div>
                     
                     <div className="space-y-3">
                       <div className="flex justify-between text-sm">
-                        <span className="text-muted-foreground">Confidence</span>
+                        <span className="text-white">Confidence</span>
                         <span className="font-medium">{prediction.confidence}%</span>
                       </div>
                       <Progress value={prediction.confidence} className="h-2" />
@@ -248,7 +249,7 @@ export default function Predict() {
                 </Card>
 
                 {/* Recommendations Card */}
-                <Card className="glass-card">
+                <Card className="glass-card dark:bg-sky-900">
                   <CardHeader>
                     <CardTitle className="flex items-center gap-2">
                       <CheckCircle className="h-5 w-5 text-success" />
@@ -260,7 +261,7 @@ export default function Predict() {
                       {prediction.recommendations.map((rec: string, index: number) => (
                         <li key={index} className="flex items-start gap-2 text-sm">
                           <div className="h-1.5 w-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                          <span className="text-muted-foreground">{rec}</span>
+                          <span className="dark:text-white">{rec}</span>
                         </li>
                       ))}
                     </ul>
@@ -268,7 +269,7 @@ export default function Predict() {
                 </Card>
 
                 {/* Performance Metrics */}
-                <Card className="glass-card">
+                <Card className="glass-card dark:bg-sky-900">
                   <CardHeader>
                     <CardTitle className="flex items-center gap-2">
                       <BarChart3 className="h-5 w-5 text-accent" />
@@ -277,19 +278,19 @@ export default function Predict() {
                   </CardHeader>
                   <CardContent className="space-y-4">
                     <div className="flex justify-between items-center">
-                      <span className="text-sm text-muted-foreground">Health Score</span>
+                      <span className="text-sm dark:text-white">Health Score</span>
                       <span className="font-semibold text-foreground">
                         {Math.floor((prediction.rul / 200) * 100)}%
                       </span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-sm text-muted-foreground">Time to Service</span>
+                      <span className="text-sm dark:text-white">Time to Service</span>
                       <span className="font-semibold text-foreground">
                         {Math.floor(prediction.rul / 10)} days
                       </span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-sm text-muted-foreground">Degradation Rate</span>
+                      <span className="text-sm dark:text-white">Degradation Rate</span>
                       <span className="font-semibold text-foreground flex items-center gap-1">
                         <TrendingDown className="h-3 w-3" />
                         0.3%/cycle
@@ -299,7 +300,7 @@ export default function Predict() {
                 </Card>
               </>
             ) : (
-              <Card className="glass-card">
+              <Card className="glass-card dark:bg-sky-900">
                 <CardContent className="p-12 text-center">
                   <Gauge className="mx-auto h-12 w-12 text-muted-foreground mb-4" />
                   <h3 className="text-lg font-semibold text-foreground mb-2">

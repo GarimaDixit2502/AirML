@@ -24,7 +24,7 @@ export default function ThresholdGauge({ value, threshold, title, engineId }: Th
   ]
 
   return (
-    <Card className={`glass-card ${isAlert ? 'border-destructive/50' : ''}`}>
+    <Card className={`glass-card dark:bg-sky-900 ${isAlert ? 'border-destructive/50' : ''}`}>
       <CardHeader className="pb-2">
         <CardTitle className="text-sm font-medium flex items-center gap-2">
           {isAlert ? (

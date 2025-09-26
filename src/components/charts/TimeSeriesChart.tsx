@@ -14,10 +14,10 @@ const sensorData = [
 
 export default function TimeSeriesChart() {
   return (
-    <Card className="glass-card">
+    <Card className="glass-card dark:bg-sky-900">
       <CardHeader>
         <CardTitle>Time-Series Sensor Data</CardTitle>
-        <CardDescription>
+        <CardDescription className="text-white">
           Engine sensor degradation over operational cycles
         </CardDescription>
       </CardHeader>
@@ -27,15 +27,18 @@ export default function TimeSeriesChart() {
             <LineChart data={sensorData}>
               <CartesianGrid strokeDasharray="3 3" className="opacity-30" />
               <XAxis 
-                dataKey="cycle" 
-                label={{ value: 'Operational Cycles', position: 'insideBottom', offset: -5 }}
+                dataKey="cycle"
+                tick={{ fill: 'currentColor' }}
+                label={{ value: 'Operational Cycles', position: 'insideBottom', offset: -5  ,fill: 'currentColor' }}
               />
-              <YAxis label={{ value: 'Sensor Values', angle: -90, position: 'insideLeft' }} />
+              <YAxis tick={{ fill: 'currentColor' }} label={{ value: 'Sensor Values', angle: -90, position: 'insideLeft',fill: 'currentColor' }} />
               <Tooltip 
                 contentStyle={{ 
                   backgroundColor: 'hsl(var(--card))', 
                   border: '1px solid hsl(var(--border))',
-                  borderRadius: '8px'
+                  borderRadius: '8px',
+                   fill: 'currentColor'
+                
                 }}
               />
               <Legend />

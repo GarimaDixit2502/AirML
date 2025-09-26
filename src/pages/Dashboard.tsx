@@ -129,7 +129,7 @@ export default function Dashboard() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-subtle py-12">
+    <div className="min-h-screen bg-blue-300 dark:bg-sky-950 py-12">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -138,7 +138,7 @@ export default function Dashboard() {
           className="mb-12"
         >
           <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
-            Engine Health <span className="gradient-text">Dashboard</span>
+            Engine Health Dashboard
           </h1>
           <p className="mt-6 text-lg leading-8 text-muted-foreground">
             Monitor all your engine predictions and maintenance schedules in one place
@@ -150,9 +150,9 @@ export default function Dashboard() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 mb-8"
+          className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 mb-8 "
         >
-          <Card className="glass-card">
+          <Card className="glass-card dark:bg-sky-900">
             <CardContent className="p-6">
               <div className="flex items-center justify-between">
                 <div>
@@ -166,7 +166,7 @@ export default function Dashboard() {
             </CardContent>
           </Card>
 
-          <Card className="glass-card">
+          <Card className="glass-card dark:bg-sky-900">
             <CardContent className="p-6">
               <div className="flex items-center justify-between">
                 <div>
@@ -180,7 +180,7 @@ export default function Dashboard() {
             </CardContent>
           </Card>
 
-          <Card className="glass-card">
+          <Card className="glass-card dark:bg-sky-900">
             <CardContent className="p-6">
               <div className="flex items-center justify-between">
                 <div>
@@ -195,7 +195,7 @@ export default function Dashboard() {
             </CardContent>
           </Card>
 
-          <Card className="glass-card">
+          <Card className="glass-card dark:bg-sky-900">
             <CardContent className="p-6">
               <div className="flex items-center justify-between">
                 <div>
@@ -215,7 +215,7 @@ export default function Dashboard() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8 "
         >
           <TimeSeriesChart />
           <RULComparisonChart />
@@ -236,7 +236,7 @@ export default function Dashboard() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8 "
         >
           <ThresholdGauge value={28} threshold={100} title="Critical Engine" engineId="N777XY-003" />
           <ThresholdGauge value={62} threshold={100} title="Medium Risk" engineId="N320AB-002" />
@@ -250,7 +250,7 @@ export default function Dashboard() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5 }}
         >
-          <Card className="glass-card">
+          <Card className="glass-card dark:bg-sky-900">
             <CardHeader>
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                 <div>

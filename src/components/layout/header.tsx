@@ -18,18 +18,18 @@ export function Header() {
   const location = useLocation()
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur-sm">
+    <header className="sticky top-0 z-50 w-full border-b bg-blue-300/80 dark:bg-sky-950/80 backdrop-blur-sm">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
         {/* Logo */}
         <Link to="/" className="flex items-center space-x-3 group">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-primary p-1 group-hover:shadow-glow transition-all duration-300">
+          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white p-1 group-hover:shadow-glow transition-all duration-300">
             <img 
               src={airplaneLogo} 
               alt="AirML Logo" 
-              className="h-full w-full object-contain filter brightness-0 invert"
+              className="h-full w-full object-contain filter brightness-5 "
             />
           </div>
-          <span className="text-xl font-bold gradient-text">AirML</span>
+          <span className="text-3xl font-bold font-dmserif text-blue-800 dark:text-white">AirML</span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -38,7 +38,7 @@ export function Header() {
             <Link
               key={item.name}
               to={item.href}
-              className={`relative px-4 py-2 text-sm font-medium transition-colors hover:text-primary ${
+              className={`relative px-4 py-2 text-sm text:2xl font-medium transition-colors hover:text-primary ${
                 location.pathname === item.href
                   ? "text-primary"
                   : "text-muted-foreground"

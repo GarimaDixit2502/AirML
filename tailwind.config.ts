@@ -14,6 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
+        dmserif: ['"DM Serif Text"', 'serif'],
         'inter': ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
       },
       colors: {
